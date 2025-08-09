@@ -3,9 +3,11 @@ kind: Pod
 metadata:
   name: my-two-container
 spec:
+  nodeName: ip-192-168-36-74.ec2.internal
   containers:
   - name: my-container
     image: nginx
-  containers:
   - name: my-container-2
     image: busybox
+    command: ["sleep", "3600"]  # keep busybox running
+

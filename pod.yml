@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-private-image-pod
+  name: my-two-container
 spec:
   containers:
   - name: my-container
-    image: your-dockerhub-username/devopman/vote:latest
-  imagePullSecrets:
-  - name: regcred
+    image: nginx
+  containers:
+  - name: my-container-2
+    image: busybox
